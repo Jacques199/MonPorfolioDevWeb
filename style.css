@@ -1,0 +1,386 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 50px 80px; /* haut/bas = 50px, gauche/droite = 80px */
+}
+
+/* Titres */
+h1, h2, h3 {
+  margin-bottom: 20px;
+}
+
+/* Paragraphes */
+p {
+  margin-bottom: 15px;
+  line-height: 1.8; /* texte plus respirant */
+  color: #444;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  margin-top: 20px; /* espace au-dessus */
+  padding: 15px 24px; /* bouton plus grand */
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #111;
+  color: #fff;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #e63946; /* rouge au hover */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #f9f9f9;
+}
+
+/* ===== HEADER ===== */
+header {
+  padding: 20px 80px; /* haut/bas = 20px, gauche/droite = 80px */
+  display: flex;
+  justify-content: space-between; /* Logo gauche, bouton droite */
+  align-items: center;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Logo à gauche */
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav {
+  flex-grow: 1; /* occupe l’espace entre logo et bouton */
+}
+
+.red {
+  color: #e63946;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+  gap: 60px; /* Espacement entre les liens */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #111;
+  position: relative;
+  padding: 5px 0;
+  font-weight: bold; /* Liens en gras */
+  font-size: 16px;
+}
+
+/* Effet souligné au survol */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 5px;
+  background: #e63946;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+/* ===== ACCUEIL ===== */
+.accueil {
+  background: #fff;
+}
+
+.accueil-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* responsive */
+}
+
+.accueil-text {
+  flex: 1;
+}
+
+.accueil-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.accueil-img img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid #e63946; /* rouge thème */
+}
+
+
+/* ===== BANDE NOIRE ===== */
+.bande-noire {
+  background: #111;
+  color: #fff;
+  padding: 15px 0;
+  overflow: hidden; /* cache le texte hors champ */
+  position: relative;
+}
+
+/* Effet de texte défilant */
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: defilement 15s linear infinite;
+}
+
+.marquee span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-right: 50px; /* espace entre répétitions */
+}
+
+@keyframes defilement {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+
+/* ===== À PROPOS ===== */
+.apropos {
+  background: #f9f9f9;
+}
+
+.apropos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* Pour mobile */
+}
+
+.apropos-img img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 3px solid #e63946; /* bordure rouge thème */
+}
+
+.apropos-text {
+  flex: 1;
+}
+
+.apropos-text p {
+  margin-bottom: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Infos rapides */
+.info-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-grid div {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  text-align: center;
+  min-width: 180px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-grid div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* ===== PROJETS ===== */
+.projets {
+  background: #fff;
+}
+.projets h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.projets .subtitle{
+    text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.card {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 6px;
+}
+.card img {
+  width: 12%;
+  border-radius: 6px;
+}
+.card h3 {
+  margin: 10px 0;
+}
+.card a {
+  color: #e63946; 
+  text-decoration-line: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.card a:hover {
+  text-decoration-line: underline; /* souligné au survol */
+}
+
+
+/* ===== COMPÉTENCES ===== */
+.competences {
+  background: #fff;
+  text-align: center;
+}
+
+.competences h2 {
+  margin-bottom: 10px;
+}
+
+.competences .subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Grille de compétences */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.skill {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.skill h3 {
+  margin-bottom: 15px;
+  color: #e63946; /* Rouge thème */
+  font-size: 1.2rem;
+}
+
+.skill ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill ul li {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+/* Petit indicateur avant chaque compétence */
+.skill ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #e63946;
+  font-weight: bold;
+}
+
+
+/* ===== CONTACT ===== */
+.contact {
+  background: #f0f0f0;
+  text-align: center;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 40px auto;
+  gap: 20px;
+}
+.contact input, 
+.contact textarea {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.contact button {
+  background: #e63946;
+  border: none;
+  padding: 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact button:hover {
+  background: #111;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+.form-message.success {
+  color: green;
+}
+.form-message.error {
+  color: red;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+}
