@@ -1,3 +1,20 @@
+// Sélectionne les éléments
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+// Toggle du menu quand on clique sur hamburger
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+// Fermer le menu quand on clique sur un lien
+document.querySelectorAll("#nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+  });
+});
+
+
 // ===== FORMULAIRE DE CONTACT =====
 const form = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
