@@ -10,7 +10,7 @@ html {
 }
 
 section {
-  padding: 50px 80px; /* haut/bas = 50px, gauche/droite = 80px */
+  padding: 50px 40px; /* haut/bas = 50px, gauche/droite = 40px */
 }
 
 /* Titres */
@@ -50,7 +50,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  padding: 20px 80px; /* haut/bas = 20px, gauche/droite = 80px */
+  padding: 20px 40px; /* haut/bas = 20px, gauche/droite = 80px */
   display: flex;
   justify-content: space-between; /* Logo gauche, bouton droite */
   align-items: center;
@@ -73,6 +73,14 @@ nav {
 
 .red {
   color: #e63946;
+}
+
+/* Icône hamburger */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #111;
 }
 
 nav ul {
